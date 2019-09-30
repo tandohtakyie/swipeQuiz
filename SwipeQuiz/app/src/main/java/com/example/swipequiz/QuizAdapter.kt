@@ -19,9 +19,10 @@ class QuizAdapter (val quizList : MutableList<MainActivity.Quiz>, private val li
         holder.bind(quizList[position], listener)
     }
 
-    fun deleteItem(position: Int){
-        quizList.removeAt(position)
-        notifyItemRemoved(position)
+    fun bounceItemBackAfterSwipe(position: Int){
+        // quizList.removeAt(position) // position to delete
+        //  notifyItemRemoved(position) // swipe off totally
+        notifyItemChanged(position) // bounce back after swiped
     }
 
     inner class CustomViewHolder (private val view : View) : RecyclerView.ViewHolder(view){

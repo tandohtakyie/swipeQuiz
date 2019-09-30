@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
             val position = viewHolder.adapterPosition
             val swipeQuizQuestion = quizAdapter.quizList[position]
-            quizAdapter.deleteItem(position)
+            quizAdapter.bounceItemBackAfterSwipe(position)
 
 
             if ((direction == ItemTouchHelper.LEFT && swipeQuizQuestion.isCorrect) ||
